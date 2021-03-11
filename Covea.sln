@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29926.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covea.Application", "Covea\Covea.Application.csproj", "{5E2FCA2A-C69D-4A2B-87CB-40F34D868440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Covea.Testing", "Covea.Testing\Covea.Testing.csproj", "{2E512861-B47B-4E0B-BB8A-4B9291F74D4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E2FCA2A-C69D-4A2B-87CB-40F34D868440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E2FCA2A-C69D-4A2B-87CB-40F34D868440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E2FCA2A-C69D-4A2B-87CB-40F34D868440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E2FCA2A-C69D-4A2B-87CB-40F34D868440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E512861-B47B-4E0B-BB8A-4B9291F74D4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E512861-B47B-4E0B-BB8A-4B9291F74D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E512861-B47B-4E0B-BB8A-4B9291F74D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E512861-B47B-4E0B-BB8A-4B9291F74D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B2E47855-B0DC-4AD1-9505-78DB3024FFDD}
+	EndGlobalSection
+EndGlobal
