@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Covea.Application.Models.Strategies;
-
-namespace Covea.Application.Models.Applicants
+﻿namespace Covea.Application.Models.Applicants
 {
     public interface IApplicant
     {

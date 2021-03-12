@@ -2,7 +2,7 @@
 {
     public class BasicInitialCommissionStrategy : ICostingStrategy
     {
-        readonly ICostingStrategy netPremiumStrategy;
+        public readonly ICostingStrategy netPremiumStrategy;
 
         public BasicInitialCommissionStrategy(ICostingStrategy netPremiumStrategy)
         {

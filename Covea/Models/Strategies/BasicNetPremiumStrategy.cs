@@ -2,8 +2,8 @@
 {
     public class BasicNetPremiumStrategy : ICostingStrategy
     {
-        readonly ICostingStrategy riskPremiumStrategy;
-        readonly ICostingStrategy renewalCommissionStrategy;
+        public readonly ICostingStrategy riskPremiumStrategy;
+        public readonly ICostingStrategy renewalCommissionStrategy;
 
         public BasicNetPremiumStrategy(ICostingStrategy riskPremiumStrategy, ICostingStrategy renewalCommissionStrategy)
         {

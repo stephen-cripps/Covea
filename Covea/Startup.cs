@@ -1,3 +1,5 @@
+using Covea.Application.Models.Applicants;
+using Covea.Application.Storage;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +21,9 @@ namespace Covea.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddTransient<IApplicantFactory, ApplicantFactory>()
+                .AddTransient<IRiskRateRepository, RiskRateRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

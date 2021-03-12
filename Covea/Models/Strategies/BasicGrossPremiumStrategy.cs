@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace Covea.Application.Models.Strategies
+﻿namespace Covea.Application.Models.Strategies
 {
-    public class BasicGrossPremiumStrategy: ICostingStrategy
+    public class BasicGrossPremiumStrategy : ICostingStrategy
     {
-        readonly ICostingStrategy initialCommissionStrategy;
-        readonly ICostingStrategy netPremiumStrategy;
+        public readonly ICostingStrategy initialCommissionStrategy;
+        public readonly ICostingStrategy netPremiumStrategy;
 
         public BasicGrossPremiumStrategy(ICostingStrategy initialCommissionStrategy, ICostingStrategy netPremiumStrategy)
         {
@@ -14,10 +12,5 @@ namespace Covea.Application.Models.Strategies
         }
 
         public double CalculateCost() => initialCommissionStrategy.CalculateCost() + netPremiumStrategy.CalculateCost();
-
-        public static BasicGrossPremiumStrategy Builder()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

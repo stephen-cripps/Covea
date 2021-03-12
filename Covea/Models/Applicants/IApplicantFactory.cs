@@ -1,7 +1,9 @@
-﻿namespace Covea.Application.Models.Applicants
+﻿using System.Threading.Tasks;
+
+namespace Covea.Application.Models.Applicants
 {
     public interface IApplicantFactory
     {
-        IApplicant CreateApplicant(int age, int sumAssured, string applicantType);
+        Task<IApplicant> CreateApplicantAsync(int age, int sumAssured, string applicantType);
     }
 }

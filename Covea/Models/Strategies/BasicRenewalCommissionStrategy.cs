@@ -2,7 +2,7 @@
 {
     public class BasicRenewalCommissionStrategy : ICostingStrategy
     {
-        readonly ICostingStrategy riskPremiumStrategy;
+        public readonly ICostingStrategy riskPremiumStrategy;
 
         public BasicRenewalCommissionStrategy(ICostingStrategy riskPremiumStrategy)
         {

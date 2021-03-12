@@ -2,8 +2,8 @@
 {
     public class BasicRiskPremiumStrategy : ICostingStrategy
     {
-        readonly double riskRate;
-        readonly double sumAssured;
+        public readonly double riskRate;
+        public readonly double sumAssured;
 
         public BasicRiskPremiumStrategy(double riskRate, double sumAssured)
         {
@@ -11,6 +11,6 @@
             this.sumAssured = sumAssured;
         }
 
-        public double CalculateCost() => riskRate + (sumAssured / 1000);
+        public double CalculateCost() => riskRate * (sumAssured / 1000);
     }
 }
