@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Covea.Application.Models;
 using Covea.Application.Storage;
 
-namespace Covea.Testing
+namespace Covea.Testing.MockStorage
 {
     public class MockRiskRateRepository : IRiskRateRepository
     {

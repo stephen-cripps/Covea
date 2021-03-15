@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BeerQuest.Application.Exceptions;
 using Covea.Application.Exceptions;
 using Covea.Application.Models.Strategies;
 using Covea.Application.Storage;
 
 namespace Covea.Application.Models.Applicants
 {
+    /// <summary>
+    /// The applicant factory is used to instantiate an applicant. It is built to allow for different type of applicants with different requirements
+    /// </summary>
     public class ApplicantFactory : IApplicantFactory
     {
         readonly IRiskRateRepository riskRateRepo;
@@ -15,6 +17,14 @@ namespace Covea.Application.Models.Applicants
         {
             this.riskRateRepo = riskRateRepo;
         }
+
+        /// <summary>
+        /// This method calls a specific method for instantiating a concrete type of applicant
+        /// </summary>
+        /// <param name="age"></param>
+        /// <param name="sumAssured"></param>
+        /// <param name="applicantType">Currently only accepts "basic"</param>
+        /// <returns></returns>
         public async Task<IApplicant> CreateApplicantAsync(int age, int sumAssured, string applicantType)
         {
             return applicantType switch
@@ -24,6 +34,12 @@ namespace Covea.Application.Models.Applicants
             };
         }
 
+        /// <summary>
+        /// This method instantiates a BasicApplicant with all "basic" strategies
+        /// </summary>
+        /// <param name="age"></param>
+        /// <param name="sumAssured"></param>
+        /// <returns></returns>
         async Task<BasicApplicant> CreateBasicApplicant(int age, int sumAssured)
         {
             if (age <= 0) throw new ArgumentOutOfRangeException(nameof(age));

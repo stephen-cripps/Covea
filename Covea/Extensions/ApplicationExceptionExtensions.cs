@@ -1,9 +1,8 @@
 ﻿using System;
-using BeerQuest.Application.Exceptions;
 using Covea.Application.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BeerQuest.Functions.Extensions
+namespace Covea.Application.Extensions
 {
     public static class ApplicationExceptionExtensions
     {

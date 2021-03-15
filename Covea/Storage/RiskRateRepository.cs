@@ -8,7 +8,8 @@ namespace Covea.Application.Storage
     public class RiskRateRepository : IRiskRateRepository
     {
         /// <summary>
-        /// I've just used this variable to store dummy data for the exercise. In a full solution a repository would get the ratecard from storage. 
+        /// I've just used this variable to store dummy data for the exercise. In a full solution a repository would get the ratecard from storage.
+        /// I've modified the data set to use age categories for each of the risk rates. These categories are defined in the risk band object 
         /// </summary>
         readonly IEnumerable<RiskBand> dummyData = new List<RiskBand>()
         {
@@ -74,7 +75,11 @@ namespace Covea.Application.Storage
             }
         };
 
-
+        /// <summary>
+        /// Gets the first band below or equal to the input SumAssured
+        /// </summary>
+        /// <param name="sumAssured"></param>
+        /// <returns></returns>
         public Task<RiskBand> GetLowerBandAsync(int sumAssured)
         {
             return Task.FromResult(dummyData.Where(d => d.SumAssured <= sumAssured)
@@ -82,6 +87,11 @@ namespace Covea.Application.Storage
                 .FirstOrDefault()); 
         }
 
+        /// <summary>
+        /// gets the first band above the input SumAssured
+        /// </summary>
+        /// <param name="sumAssured"></param>
+        /// <returns></returns>
         public Task<RiskBand> GetUpperBandAsync(int sumAssured)
         {
             return Task.FromResult(dummyData.Where(d => d.SumAssured > sumAssured)

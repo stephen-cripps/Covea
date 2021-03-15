@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Covea.Application.Controllers;
 using Covea.Application.Models.Applicants;
 using Covea.Application.Storage;
 using Covea.Application.Views;
+using Covea.Testing.MockStorage;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Xunit;
@@ -13,6 +16,7 @@ namespace Covea.Testing.Subcutaneous_tests
     public class ApplicantControllerTests
     {
         ApplicantController controller;
+        IConfiguration config;
 
         public ApplicantControllerTests()
         {
@@ -23,7 +27,17 @@ namespace Covea.Testing.Subcutaneous_tests
             })
             .Build();
 
-            controller = new ApplicantController(host.Services.GetRequiredService<IApplicantFactory>());
+            var configValues = new Dictionary<string, string>
+            {
+                {"MinimumGrossPremium", "2"},
+                {"SumAssuredIterationStep", "5000"}
+            };
+
+            config = new ConfigurationBuilder()
+                .AddInMemoryCollection(configValues)
+                .Build();
+
+            controller = new ApplicantController(host.Services.GetRequiredService<IApplicantFactory>(), config);
         }
 
 
@@ -121,7 +135,7 @@ namespace Covea.Testing.Subcutaneous_tests
             })
             .Build();
 
-            controller = new ApplicantController(host.Services.GetRequiredService<IApplicantFactory>());
+            controller = new ApplicantController(host.Services.GetRequiredService<IApplicantFactory>(), config);
 
             //Test
             var resp = await controller.GetGrossPremium(20, 400000) as StatusCodeResult;
