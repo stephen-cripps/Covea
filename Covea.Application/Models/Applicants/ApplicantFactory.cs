@@ -25,7 +25,7 @@ namespace Covea.Application.Models.Applicants
         /// <param name="sumAssured"></param>
         /// <param name="applicantType">Currently only accepts "basic"</param>
         /// <returns></returns>
-        public async Task<IApplicant> CreateApplicantAsync(int age, int sumAssured, string applicantType)
+        public async Task<Applicant> CreateApplicantAsync(int age, int sumAssured, string applicantType)
         {
             return applicantType switch
             {
